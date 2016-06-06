@@ -1,0 +1,60 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.compiler-invoker {
+    background-color: darken(@base-background-color, 2.5%);
+    border-left: 1px solid @base-border-color;
+    border-bottom: 1px solid @base-border-color;
+}
+
+.compiler-invoker .console-control {
+    height: 20px;
+    width: 100%;
+    background-color: darken(@base-background-color, 5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+
+.compiler-invoker .console {
+    white-space: pre-wrap;
+    height: 200px;
+    resize: none;
+    background-color: inherit;
+    width: 100%;
+    border: none;
+    min-height: 40px;
+    padding-left: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: monospace;
+    line-height: 30px;
+}
+
+.compiler-invoker .hidden {
+    display: none;
+}
+
+.compiler-invoker .resizer {
+    cursor: n-resize;
+    height: 4px;
+    background: @background-color-highlight;
+}
+
+.compiler-invoker .console-input {
+    width: calc(~'100% - 4px');
+    margin: 2px;
+    background-color: @pane-item-background-color;
+    border: 1px solid @tab-border-color;
+    border-radius: 3px;
+    padding: 3px 4px 3px 4px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: monospace;
+    line-height: 30px;
+}
