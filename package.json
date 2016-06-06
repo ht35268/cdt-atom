@@ -1,0 +1,52 @@
+{
+  "name": "cdt-atom",
+  "main": "./lib/compiler-invoker",
+  "version": "0.1.0",
+  "description": "C Development Tools for Atom.",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ht35268/cdt-atom.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {},
+  "packageDependencies": {
+    "tool-bar": "^0.1.0"
+  },
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "^0.1.0": "consumeToolBar"
+      }
+    }
+  },
+  "readme": "\n# C Development Tools for Atom\n\nSupport for calling g++. Adds buttons to the [tool-bar](https://atom.io/packages/tool-bar) package\nwhile also retaining keybindings for ease of compilation and execution. The entire\npackage is currently optimized for participants in Olympiad in Informatics. Further\nfunctions will be added gradually.\n\nWithin a considerable time, the code will go through a re-write and support\nproject options and a few other useful functions that resembles Dev-C++ and/or\nEclipse IDE.\n\n# Commands\n\n* toggle: Toogle console output. (Ctrl+F9)\n* compile-only: Compiles the program only. (F9)\n* execute-only: Execute the compiled program only. (F10)\n* compile-and-run: Compiles and runs the current file. (F12)\n* clear-console: Erases the console.\n* kill-process: Terminates the currently running program. (Ctrl+F12)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/ht35268/cdt-atom/issues"
+  },
+  "homepage": "https://github.com/ht35268/cdt-atom#readme",
+  "_id": "cdt-atom@0.1.0",
+  "_shasum": "755162d1c8b8a14e90885b6fa86b19ad35fc465e",
+  "_resolved": "file:..\\d-11655-992-189uzcs\\package.tgz",
+  "_from": "..\\d-11655-992-189uzcs\\package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib\\compiler-invoker-view.coffee",
+        "lib\\compiler-invoker.coffee",
+        "lib\\invoker.coffee",
+        "lib\\config-schema.coffee"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
