@@ -18,3 +18,7 @@ Eclipse IDE.
 * compile-and-run: Compiles and runs the current file. (F12)
 * clear-console: Erases the console.
 * kill-process: Terminates the currently running program. (Ctrl+F12)
+
+# Special Thanks:
+
+Initial version by **concatto/compiler-invoker**.
