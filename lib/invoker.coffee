@@ -23,6 +23,7 @@ class Invoker
     @killProcess()
 
     directory = @getActiveDirectory()
+    title = atom.workspace.getActiveTextEditor().getTitle()
 
     # Define the type of compilation.
     all_files_build = (@getConfig("compilerOptions.buildMode") != "Current file only")
@@ -68,9 +69,9 @@ class Invoker
     # Executing program
     executable = "a.exe"
     if (all_files_build == true)
-      executable = directory.getPath() + "\\" + directory.getBaseName() + ".exe"
+      executable = directory.getPath() + "\\" + title + ".exe"
     else
-      executable = atom.workspace.getActiveTextEditor().getPath() + ".exe"
+      executable = directory.getPath() + ".exe"
     args = files.concat(['-o', executable, debug_info, lang_dialect])
     compilerProgram = @getConfig "environmentOptions.compilerPath"
     if (compilerProgram == "" || compilerProgram == undefined)
@@ -104,7 +105,7 @@ class Invoker
       @exe = undefined
       outcome = if exeCode? then ("code " + exeCode) else ("signal " + signal)
       # I am the glorious separator...
-      @textFunction("\n----------------------------------------------------------------\n")
+      @textFunction("\n================================================================\n")
       if (outcome == "code 0")
         @informationFunction("Execution finished normally.\n")
       else
@@ -114,10 +115,11 @@ class Invoker
     executable = "a.exe"
     all_files_build = (@getConfig("compilerOptions.buildMode") != "Current file only")
     directory = @getActiveDirectory()
+    title = atom.workspace.getActiveTextEditor().getTitle()
     if (all_files_build == true)
-      executable = directory.getPath() + "\\" + directory.getBaseName() + ".exe"
+      executable = directory.getPath() + "\\" + title + ".exe"
     else
-      executable = atom.workspace.getActiveTextEditor().getPath() + ".exe"
+      executable = directory.getPath() + ".exe"
     @executeMain(executable)
 
   writeToProcess: (data) =>
