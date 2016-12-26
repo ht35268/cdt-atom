@@ -8,36 +8,48 @@ module.exports = ConsoleView =
   config: configSchema
 
   consumeToolBar: (toolBar) ->
-    @toolBar = toolBar('compiler-invoker');
+    @toolBar = toolBar('compiler-invoker')
+    
     @toolBar.addButton
       icon: 'code'
       callback: 'compiler-invoker:compile-and-run'
       tooltip: 'Compile and Run'
       iconset: 'ion'
-
+      priority: 256
+	
     @toolBar.addButton
       icon: 'hammer'
       callback: 'compiler-invoker:compile-only'
       tooltip: 'Compile'
       iconset: 'ion'
+      priority: 256
+    
+    @toolBar.addSpacer
+      priority: 256
 
     @toolBar.addButton
       icon: 'gear-a'
       callback: 'compiler-invoker:execute-only'
       tooltip: 'Run Program'
       iconset: 'ion'
-
+      priority: 256
+	
     @toolBar.addButton
       icon: 'backspace'
       callback: 'compiler-invoker:clear-console'
       tooltip: 'Clear console'
       iconset: 'ion'
-
+      priority: 256
+	
     @toolBar.addButton
       icon: 'alert'
       callback: 'compiler-invoker:kill-process'
       tooltip: 'Kill process'
       iconset: 'ion'
+      priority: 256
+
+    @toolBar.addSpacer
+      priority: 256
 
   activate: (state) ->
     @compilerInvokerView = new CompilerInvokerView(state.compilerInvokerViewState)
@@ -50,7 +62,7 @@ module.exports = ConsoleView =
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.commands.add 'atom-workspace',
       'compiler-invoker:toggle': =>
-        @toggle()
+        @compilerInvokerView.toggleConsole()
       'compiler-invoker:compile-and-run': =>
         @compilerInvokerView.showConsole()
         @invoker.compileAndExecute(true)
